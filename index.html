@@ -118,19 +118,19 @@ body.export .email .sc img{animation:none!important}
 @media (max-width:760px),(max-height:480px){#ui{gap:6px;padding:6px}.btn{font-size:11px;padding:7px 11px}#fs{display:none}#dots{display:none}}
 @media (max-aspect-ratio:3/4){.mobile-hint{display:block;position:fixed;top:10px;left:0;right:0;text-align:center;font:500 12px Inter;color:var(--muted);letter-spacing:.06em;z-index:60}}
 
-.cards{position:absolute;left:100px;right:100px;top:345px;height:650px;display:grid;grid-template-columns:repeat(5,1fr);gap:22px;perspective:1600px}
+.cards{position:absolute;left:100px;right:100px;top:300px;height:680px;display:grid;grid-template-columns:repeat(5,1fr);gap:22px;perspective:1600px}
 .card{position:relative;border-radius:22px;padding:30px 26px;transform:rotateX(6deg) rotateY(-4deg);transform-style:preserve-3d;box-shadow:0 30px 60px rgba(20,30,60,.25),inset 0 1px 0 rgba(255,255,255,.35),inset 0 0 0 1px rgba(0,0,0,.06);transition:transform .4s ease;cursor:pointer;overflow:hidden;display:flex;flex-direction:column}
 .card:hover{transform:rotateX(0) rotateY(0) translateY(-10px)}
 .card:before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,0) 40%);pointer-events:none}
-.card .no{font-size:15px;letter-spacing:.24em;font-weight:700;opacity:.85}
-.card h3{font-size:31px;line-height:1.1;font-weight:700;margin:12px 0 16px;min-height:104px;letter-spacing:-.01em}
-.card .big{font-size:58px;line-height:1;font-weight:700;color:inherit;letter-spacing:-.02em}
-.card .bl{font-size:17px;line-height:1.35;opacity:.92;margin:6px 0 16px;min-height:42px}
-.card .why{font-size:14px;letter-spacing:.2em;font-weight:700;opacity:.8;margin-bottom:10px;border-top:1px solid rgba(128,128,128,.4);padding-top:14px}
+.card .no{font-size:18px;letter-spacing:.2em;font-weight:700;opacity:.8}
+.card h3{font-size:34px;line-height:1.1;font-weight:700;margin:10px 0 14px;letter-spacing:-.01em}
+.card .big{font-size:50px;white-space:nowrap;line-height:1;font-weight:700;color:inherit;letter-spacing:-.02em}
+.card .bl{font-size:21px;line-height:1.3;opacity:.95;margin:10px 0 22px}
+.card .why{font-size:15px;letter-spacing:.2em;font-weight:700;opacity:.75;margin-bottom:12px;border-top:1px solid rgba(128,128,128,.45);padding-top:16px}
 .card ol{list-style:none;counter-reset:w}
-.card ol li{counter-increment:w;font-size:19px;line-height:1.3;margin-bottom:10px;padding-left:28px;position:relative}
-.card ol li:before{content:counter(w);position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:rgba(128,128,128,.25);font-size:12px;font-weight:700;text-align:center;line-height:20px}
-.card .note{margin-top:auto;font-size:15px;line-height:1.35;background:rgba(128,128,128,.18);border:1px solid rgba(128,128,128,.4);border-radius:10px;padding:10px 12px}
+.card ol li{counter-increment:w;font-size:23px;line-height:1.25;margin-bottom:14px;padding-left:34px;position:relative;font-weight:500}
+.card ol li:before{content:counter(w);position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:rgba(128,128,128,.3);font-size:14px;font-weight:700;text-align:center;line-height:24px}
+.card .note{margin-top:auto;font-size:19px;line-height:1.3;font-weight:600;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4);border-radius:12px;padding:12px 14px}
 .card .go{margin-top:auto;font-size:13px;letter-spacing:.18em;font-weight:700;opacity:.85}
 .c1{background:linear-gradient(155deg,#2F5BE0,#1A35A8);color:#fff}
 .c2{background:linear-gradient(155deg,#BFE2FA,#8EC9F2);color:#0B0B0F}
@@ -161,22 +161,17 @@ body.export .email .sc img{animation:none!important}
   <div class="bg"></div>
   <div class="hd"><div class="kick">French Atelier · Board review · October 2026</div><h2>Five strategic moves for <em>brand positioning</em> and <em>demand generation</em>.</h2></div>
   <div class="cards">
-    <div class="card c1" data-go="1"><div class="no">01</div><h3>Enriched course offering</h3><div class="big">7 courses</div><div class="bl">FA Foundation, Beginner, Elementary, Intermediate rebuilt · LSF Foundation, Beginner, Elementary launched</div>
-      <div class="why">WHY</div><ol><li>Higher LTV and stickiness, lower churn</li><li>More segments and upsell paths</li><li>Higher CSAT and NPS</li></ol><div class="go">CEFR A0 → A2.2 →</div></div>
-    <div class="card c2" data-go="2"><div class="no">02</div><h3>Website revamp: the brand’s shop window</h3><div class="big">35 pages</div><div class="bl">frenchatelierlive.com, fully coded and live</div>
-      <div class="why">WHY</div><ol><li>Richer look, feel and content</li><li>Trust and credibility for the next growth stage</li><li>Showcase for current and upcoming offers</li></ol><div class="go">SEE THE SITE →</div></div>
-    <div class="card c3" data-go="3"><div class="no">03</div><h3>Organic uplift and lead nurturing</h3><div class="big">32 · 65 · 24</div><div class="bl">organic videos · CRM emails · WhatsApp messages</div>
-      <div class="why">WHY</div><ol><li>Lower CPL and CPA through a larger organic share</li><li>Higher conversion: nurturing and promos at the right moment</li><li>A growing community to monetise at scale</li></ol><div class="go">ORGANIC · EMAIL →</div></div>
-    <div class="card c4" data-go="5"><div class="no">04</div><h3>Cultural Capsules</h3><div class="big">3 × 10</div><div class="bl">3 themed packs, 30 live conferences</div>
-      <div class="why">WHY</div><ol><li>Brand positioning: language through culture</li><li>A unique, differentiating experience</li><li>Higher LTV via upsell and database sales</li></ol><div class="note"><b>4 · Test:</b> our first no-touch, self-service e-commerce funnel</div></div>
-    <div class="card c5" data-go="7"><div class="no">05</div><h3>Programs for engaged students</h3><div class="big">≤ $5,000</div><div class="bl">per student: multi-level bundles sold to the database</div>
-      <div class="why">WHY</div><ol><li>Larger basket size from highly engaged customers</li><li>Part of the LTV play, separate from the capsules</li></ol><div class="note">A few dozen sold so far</div></div>
-  </div>
+<div class="card c1" data-go="1"><div class="no">01</div><h3>New courses</h3><div class="big">7 courses</div><div class="bl">4 rebuilt, 3 new levels</div><div class="why">WHY</div><ol><li>Students stay longer</li><li>Reach more segments</li><li>Higher satisfaction (NPS)</li></ol></div>
+<div class="card c2" data-go="2"><div class="no">02</div><h3>New website</h3><div class="big">35 pages</div><div class="bl">frenchatelierlive.com</div><div class="why">WHY</div><ol><li>Premium look and content</li><li>More trust as we grow</li><li>Shows every offer</li></ol></div>
+<div class="card c3" data-go="3"><div class="no">03</div><h3>Organic and CRM</h3><div class="big">32 videos</div><div class="bl">65 emails · 24 WhatsApp</div><div class="why">WHY</div><ol><li>Lower cost per lead</li><li>More leads become sales</li><li>Bigger community</li></ol></div>
+<div class="card c4" data-go="5"><div class="no">04</div><h3>Cultural Capsules</h3><div class="big">30 lectures</div><div class="bl">3 themes, live online</div><div class="why">WHY</div><ol><li>Language through culture</li><li>Unique in the market</li><li>More revenue per student</li></ol><div class="note">First sale fully online, no sales call</div></div>
+<div class="card c5" data-go="7"><div class="no">05</div><h3>Programs</h3><div class="big">$5,000</div><div class="bl">maximum per student</div><div class="why">WHY</div><ol><li>Bigger orders from top students</li><li>A few dozen sold</li></ol></div>
+</div>
   <div class="src">Sources: live site audit 7 Oct 2026 · Cultural Capsules syllabus · organic library and CRM program repositories · Programs: internal sales figures.</div>
 <img class="foot" src="img/footer.png" alt=""></section>
 
 <section class="slide" data-title="Course offering">
-  <div class="hd"><div class="kick">01 · Enriched course offering</div><h2>7 courses, 2 collections, <em>CEFR A0 → A2.2</em>.</h2></div>
+  <div class="hd"><div class="kick">01 · Enriched course offering</div><h2>7 courses, <em>from first word to intermediate</em> (CEFR A0 to A2.2).</h2></div>
   <div class="browser" style="left:100px;top:290px;width:1180px"><div class="bar"><i></i><i></i><i></i><span>frenchatelierlive.com · learning journey</span></div><img src="img/f_home_8.jpg" alt="" style="height:664px;object-fit:cover"></div>
   <div style="position:absolute;left:1330px;top:290px;width:490px">
    <div class="kick" style="color:var(--gold)">French Atelier · structured</div>
@@ -242,30 +237,30 @@ body.export .email .sc img{animation:none!important}
 
 
 <section class="slide" data-title="E-commerce">
-  <div class="hd"><div class="kick">04 · Test · our first self-service funnel</div><h2>E-commerce tests: <em>capsules in October, courses late October</em>.</h2></div>
+  <div class="hd"><div class="kick">04 · Test · our first self-service funnel</div><h2>Online checkout tests: <em>capsules in October, courses late October</em>.</h2></div>
   <div class="browser" style="left:100px;top:300px;width:1060px"><div class="bar"><i></i><i></i><i></i><span>Cultural Capsules · choose your pack</span></div><img src="img/s_cap_offers.jpg" alt="" style="height:620px;object-fit:cover;object-position:top"></div>
   <div style="position:absolute;left:1200px;top:300px;width:620px">
    <div style="display:flex;gap:14px;margin-bottom:22px"><div style="flex:1;background:linear-gradient(155deg,#2F5BE0,#1A35A8);color:#fff;border-radius:14px;padding:16px 18px"><div style="font-size:14px;letter-spacing:.2em;font-weight:700;color:#BFE2FA">OCTOBER</div><div style="font-size:21px;font-weight:600;margin-top:4px">Cultural Capsules e-commerce test</div></div>
    <div style="flex:1;background:linear-gradient(155deg,#BFE2FA,#8EC9F2);color:#0B0B0F;border-radius:14px;padding:16px 18px"><div style="font-size:14px;letter-spacing:.2em;font-weight:700;color:#1A35A8">LATE OCTOBER</div><div style="font-size:21px;font-weight:600;margin-top:4px">Course e-commerce test</div></div></div>
    <table class="ptable" style="position:static;width:100%;font-size:20px">
     <tr><th>Offer</th><th>Test price</th></tr>
-    <tr><td>1 capsule</td><td><span class="p">$89</span> /mo × 3 · $267</td></tr>
-    <tr><td>2 capsules</td><td><span class="p">$158</span> /mo × 3 · $474</td></tr>
-    <tr><td>3 capsules</td><td><span class="p">$207</span> /mo × 3 · $621</td></tr>
-    <tr><td>Membership</td><td><span class="p">$99</span> /mo × 12 · course + all 30 capsules</td></tr>
-    <tr><td>Course</td><td><span class="p">$142.80</span> first month, then 4 × $285.60</td></tr>
+    <tr><td>1 capsule</td><td><span class="p">$89</span> a month for 3 months ($267)</td></tr>
+    <tr><td>2 capsules</td><td><span class="p">$158</span> a month for 3 months ($474)</td></tr>
+    <tr><td>3 capsules</td><td><span class="p">$207</span> a month for 3 months ($621)</td></tr>
+    <tr><td>Membership</td><td><span class="p">$99</span> a month for 12 months, course + all 30 capsules</td></tr>
+    <tr><td>Course</td><td><span class="p">$142.80</span> first month, then 4 payments of $285.60</td></tr>
    </table>
-   <p style="font-size:20px;line-height:1.45;color:#3C4048;margin-top:18px">How it works: register, choose, pay. No sales call. Cards, PayPal, Apple Pay and Google Pay through eTeacher payments. We A/B test price points to find volume at a workable CPA.</p>
+   <p style="font-size:20px;line-height:1.45;color:#3C4048;margin-top:18px">How it works: register, choose, pay. No sales call. Cards, PayPal, Apple Pay and Google Pay through eTeacher payments. We test different prices to find the best sales volume at an acceptable cost per sale.</p>
   </div>
   <div class="src">Course list prices today: $336 per month or $1,240 in one payment. Funnel built and sandbox tested.</div>
 <img class="foot" src="img/footer.png" alt=""></section>
 <section class="slide" data-title="Programs">
   <div class="hd"><div class="kick">05 · Programs</div><h2>Programs: multi-level bundles <em>up to $5,000 per student</em>.</h2>
-  <p class="lead" style="font-size:28px;margin-top:16px;max-width:1300px">Several course levels bundled into one program and sold to our most engaged students in the database. Part of the LTV play, separate from Cultural Capsules.</p></div>
+  <p class="lead" style="font-size:28px;margin-top:16px;max-width:1300px">Several course levels bundled into one program and sold to our most engaged students in the database. Part of our plan to raise revenue per student. Separate from Cultural Capsules.</p></div>
   <div class="cards" style="top:520px;height:430px;grid-template-columns:repeat(3,1fr)">
-   <div class="card c2" style="cursor:default"><div class="no">PRICE</div><div class="big" style="font-size:96px;margin-top:30px">$5,000</div><div class="bl" style="font-size:22px">up to, per student</div></div>
-   <div class="card c3" style="cursor:default"><div class="no">SOLD</div><div class="big" style="font-size:96px;margin-top:30px">Dozens</div><div class="bl" style="font-size:22px">a few dozen programs sold so far</div></div>
-   <div class="card c1" style="cursor:default"><div class="no">WHY</div><div class="big" style="font-size:52px;margin-top:30px;line-height:1.1">Larger basket size</div><div class="bl" style="font-size:22px">from highly engaged customers, carefully selected</div></div>
+   <div class="card c2" style="cursor:default"><div class="no">PRICE</div><div class="big" style="font-size:96px;margin-top:30px">$5,000</div><div class="bl" style="font-size:24px">maximum price per student</div></div>
+   <div class="card c3" style="cursor:default"><div class="no">SOLD</div><div class="big" style="font-size:80px;margin-top:30px">A few dozen</div><div class="bl" style="font-size:24px">programs sold so far</div></div>
+   <div class="card c1" style="cursor:default"><div class="no">WHY</div><div class="big" style="font-size:52px;margin-top:30px;line-height:1.1">Larger basket size</div><div class="bl" style="font-size:24px">from our most engaged students, carefully selected</div></div>
   </div>
   <div class="src">Figures: internal sales data.</div>
 <img class="foot" src="img/footer.png" alt=""></section>
