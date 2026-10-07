@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>French Atelier · Initiatives Review · October 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1430;--deep:#060C22;--gold:#C8A96B;--gold2:#E4CC97;--ivory:#F6F0E6;--sky:#8FD3FF;--muted:#AEB6CC;--line:rgba(200,169,107,.35)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#03071a;overflow:hidden;font-family:Inter,system-ui,sans-serif;color:var(--ivory);-webkit-font-smoothing:antialiased}
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#stage{width:1920px;height:1080px;position:relative;transform-origin:center center;flex:none;background:var(--deep);overflow:hidden;box-shadow:0 30px 120px rgba(0,0,0,.6)}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility .6s;background:radial-gradient(1200px 700px at 85% 0%,rgba(143,211,255,.07),transparent 60%),radial-gradient(900px 600px at 0% 100%,rgba(200,169,107,.08),transparent 60%),linear-gradient(160deg,#0B1636 0%,#060C22 70%)}
+.slide.on{opacity:1;visibility:visible}
+/* chrome */
+.brand{position:absolute;left:100px;top:52px;display:flex;align-items:center;gap:18px;font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.brand img{height:30px}
+.pg{position:absolute;right:100px;top:56px;font-size:15px;letter-spacing:.22em;color:var(--muted);font-weight:500}
+.pg b{color:var(--gold);font-weight:600}
+.kick{font-size:17px;letter-spacing:.28em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:16px}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.005em;line-height:1.02}
+h2{font-size:66px}
+h2 em,h1 em{font-style:italic;color:var(--gold2);font-weight:500}
+.lead{font-size:23px;line-height:1.5;color:#DCD6CA;max-width:720px}
+.src{position:absolute;left:100px;right:100px;bottom:30px;font-size:14px;line-height:1.4;color:#8790AA;letter-spacing:.01em}
+.src a{color:#A9B4D0}
+.hd{position:absolute;left:100px;top:118px;right:100px}
+/* media frames */
+.browser{position:absolute;border-radius:14px;overflow:hidden;background:#0F1A3C;box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(200,169,107,.28)}
+.browser .bar{height:36px;display:flex;align-items:center;gap:8px;padding:0 16px;background:#141F45;border-bottom:1px solid rgba(255,255,255,.06)}
+.browser .bar i{width:11px;height:11px;border-radius:50%;background:#3A456B}
+.browser .bar span{margin-left:14px;flex:1;height:22px;border-radius:11px;background:#0B1433;color:#9AA6C7;font-size:13px;line-height:22px;padding-left:14px;letter-spacing:.02em}
+.browser video,.browser img,.browser iframe{display:block;width:100%;border:0}
+.phone{position:absolute;border-radius:30px;padding:9px;background:linear-gradient(145deg,#1B2550,#0A1130);box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(200,169,107,.35)}
+.phone .scr{position:relative;width:100%;height:100%;border-radius:22px;overflow:hidden;background:#000}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover;display:block}
+.cap{position:absolute;font-size:16px;color:var(--muted);line-height:1.35}
+.cap b{display:block;color:var(--ivory);font-size:19px;font-weight:600;margin-bottom:3px}
+.tag{display:inline-block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--deep);background:var(--gold);padding:5px 10px;border-radius:4px}
+.tag.sky{background:var(--sky)}
+.tag.line{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.vid{cursor:pointer}
+.snd{position:absolute;right:10px;bottom:10px;z-index:5;font-size:12px;letter-spacing:.08em;background:rgba(6,12,34,.72);color:var(--ivory);padding:6px 10px;border-radius:20px;border:1px solid rgba(200,169,107,.5);pointer-events:none}
+/* numbers */
+.num{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--gold2);line-height:.9}
+.stat{border-top:1px solid var(--line);padding-top:16px}
+.stat .num{font-size:84px}
+.stat .lb{font-size:19px;line-height:1.35;color:#D8D2C6;margin-top:10px}
+.stat .lb b{color:var(--ivory);font-weight:600}
+ul.dots{list-style:none}
+ul.dots li{position:relative;padding-left:24px;font-size:21px;line-height:1.45;color:#DCD6CA;margin-bottom:12px}
+ul.dots li:before{content:"";position:absolute;left:0;top:13px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+ul.dots li b{color:var(--ivory);font-weight:600}
+/* UI */
+#ui{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:10px;padding:12px;z-index:50;pointer-events:none}
+#ui>*{pointer-events:auto}
+.btn{font:600 13px Inter;letter-spacing:.08em;text-transform:uppercase;color:var(--ivory);background:rgba(10,20,48,.82);border:1px solid rgba(200,169,107,.55);padding:10px 16px;border-radius:30px;cursor:pointer;text-decoration:none;backdrop-filter:blur(8px)}
+.btn.gold{background:var(--gold);color:#0A1430;border-color:var(--gold)}
+#dots{display:flex;gap:6px;align-items:center;background:rgba(10,20,48,.7);padding:0 12px;border-radius:30px;border:1px solid rgba(200,169,107,.3)}
+#dots i{width:8px;height:8px;border-radius:50%;background:#46507a;cursor:pointer}
+#dots i.on{background:var(--gold);width:22px;border-radius:5px}
+body.export #ui{display:none}
+body.export #stage{box-shadow:none}
+body.export .snd{display:none}
+/* slide specifics */
+.s0 .bg{position:absolute;inset:0;background:url(img/bg-cover.jpg) center/cover}
+.s0 .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,12,34,.96) 0%,rgba(6,12,34,.86) 45%,rgba(6,12,34,.7) 100%)}
+.s0 h1{font-size:104px;position:absolute;left:100px;top:250px;width:760px}
+.s0 .lead{position:absolute;left:100px;top:600px;width:640px}
+.s0 .grid{position:absolute;left:930px;top:200px;width:890px;display:grid;grid-template-columns:1fr 1fr;column-gap:64px;row-gap:34px}
+.s0 .grid .num{font-size:82px}
+.s0 .meta{position:absolute;left:100px;top:780px;display:flex;gap:12px}
+.mp li{font-size:17px;line-height:1.3;color:#C9C3B6;margin-bottom:5px;padding-left:18px;position:relative;list-style:none}
+.mp li:before{content:"";position:absolute;left:0;top:10px;width:7px;height:1px;background:var(--gold)}
+.pk{position:absolute;top:458px;width:556px}
+.pk .vframe{width:556px;height:313px;border-radius:12px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(200,169,107,.35);position:relative}
+.pk .vframe video,.pk .vframe img{width:100%;height:100%;display:block;object-fit:cover}
+.pk h3{display:none}
+.pk h3 small{font-family:Inter;font-size:14px;letter-spacing:.2em;color:var(--sky);font-weight:600;text-transform:uppercase;display:block;margin-bottom:6px}
+.pk .sub{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--sky);font-weight:600;margin:20px 0 14px}
+.pk ol{columns:2;column-gap:22px;list-style:none;counter-reset:c}
+.pk ol li{counter-increment:c;font-size:18px;line-height:1.28;color:#E2DCD0;margin-bottom:9px;break-inside:avoid;padding-left:28px;position:relative}
+.pk ol li:before{content:counter(c,decimal-leading-zero);position:absolute;left:0;top:1px;font-size:13px;color:var(--gold);font-weight:600}
+.band{position:absolute;display:flex;gap:0;border:1px solid var(--line);border-radius:14px;background:rgba(10,20,48,.55)}
+.band>div{padding:18px 26px;border-right:1px solid var(--line)}
+.band>div:last-child{border-right:0}
+.band .num{font-size:56px}
+.band .lb{font-size:15.5px;color:#CFC9BC;line-height:1.3;margin-top:6px}
+.ptable{position:absolute;border-collapse:collapse;font-size:17px}
+.ptable td,.ptable th{padding:11px 14px;border-bottom:1px solid rgba(200,169,107,.22);text-align:left;vertical-align:top}
+.ptable th{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.ptable td:first-child{color:var(--ivory);font-weight:600}
+.ptable td{color:#D8D2C6}
+.ptable .p{font-family:'Cormorant Garamond';font-size:27px;color:var(--gold2);font-weight:600;white-space:nowrap}
+.email{position:absolute;border-radius:12px;overflow:hidden;background:#F6F0E6;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(200,169,107,.35)}
+.email .eb{height:34px;background:#EDE5D6;display:flex;align-items:center;padding:0 14px;font-size:12.5px;color:#5b5446;gap:8px;border-bottom:1px solid #ddd2bf}
+.email .eb b{color:#1a2142}
+.email .sc{position:absolute;left:0;right:0;top:34px;bottom:0;overflow:hidden}
+.email .sc img{width:100%;display:block}
+.slide.on .email .sc img{animation:escroll 26s ease-in-out 1.5s infinite alternate}
+@keyframes escroll{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--ey))}}
+body.export .email .sc img{animation:none!important}
+.fl{position:absolute;left:100px;top:400px;width:420px}
+.fl .st{border-left:2px solid var(--gold);padding:0 0 14px 22px;position:relative}
+.fl .st:before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--deep);border:2px solid var(--gold)}
+.fl .st:last-child{border-left-color:transparent}
+.fl .st h4{font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);font-weight:600}
+.fl .st p{font-size:18px;line-height:1.38;color:#D8D2C6;margin-top:4px}
+.fl .st p b{color:var(--gold2);font-family:'Cormorant Garamond';font-size:26px;font-weight:600}
+.post{position:absolute;border-radius:12px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(200,169,107,.35);background:#fff}
+.post .ph{height:44px;display:flex;align-items:center;gap:10px;padding:0 12px;background:#fff;color:#111;font-size:13.5px;font-weight:600}
+.post .ph i{width:26px;height:26px;border-radius:50%;background:conic-gradient(#f9ce34,#ee2a7b,#6228d7,#f9ce34);display:inline-block;padding:2px}
+.post .ph i:after{content:"";display:block;width:100%;height:100%;border-radius:50%;background:#0A1430}
+.post img{display:block;width:100%}
+.mobile-hint{display:none}
+@media (max-aspect-ratio:3/4){.mobile-hint{display:block;position:fixed;top:10px;left:0;right:0;text-align:center;font:500 12px Inter;color:var(--muted);letter-spacing:.06em;z-index:60}}
+</style>
+</head>
+<body>
+<div class="mobile-hint">Rotate your phone for full-screen slides</div>
+<div id="viewport"><div id="stage">
+
+<!-- ============ 0 · SCALE ============ -->
+<section class="slide s0" data-title="Scale at a glance">
+  <div class="bg"></div>
+  <div class="brand"><img src="img/logo-white.png" alt="French Atelier">by Acadomia</div>
+  <div class="pg"><b>01</b> / 09</div>
+  <div style="position:absolute;left:100px;top:200px" class="kick">Initiatives review · October 2026</div>
+  <h1>French, taught <em>through culture</em>, built to scale.</h1>
+  <p class="lead">Everything French Atelier has launched since spring 2026, and what we are testing next: a new flagship site, a culture product line, self-service checkout, video and full CRM funnels.</p>
+  <div class="grid">
+    <div class="stat"><div class="num">35</div><div class="lb"><b>live pages</b> on the new frenchatelierlive.com</div></div>
+    <div class="stat"><div class="num">7</div><div class="lb"><b>courses</b> in 2 collections, CEFR A0 → A2.2</div></div>
+    <div class="stat"><div class="num">72</div><div class="lb"><b>places in France</b> on the interactive course map</div></div>
+    <div class="stat"><div class="num">30</div><div class="lb"><b>Cultural Capsules</b>: live conferences in 3 packs of 10</div></div>
+    <div class="stat"><div class="num">19</div><div class="lb"><b>Meta ads active today</b> across 7 ad sets</div></div>
+    <div class="stat"><div class="num">32</div><div class="lb"><b>short-form videos</b> ready in the organic library</div></div>
+    <div class="stat"><div class="num">65</div><div class="lb"><b>CRM emails</b> designed, plus <b>24 WhatsApp</b> messages</div></div>
+    <div class="stat"><div class="num">16,875</div><div class="lb"><b>Instagram followers</b>, plus 6,700 on Facebook (10 Sep 2026)</div></div>
+  </div>
+  <div class="src">Sources: live site audit 7 Oct 2026 (35 pages, HTTP 200) · course and map data from the site code · Cultural Capsules syllabus · Meta Ads Manager, French Atelier v2, pulled 7 Oct 2026 · organic library repository · CRM email programs (see slide 09) · social baseline 10 Sep 2026.</div>
+</section>
+
+<!-- ============ 1 · WEBSITE ============ -->
+<section class="slide" data-title="The new website">
+  <div class="brand"><img src="img/logo-white.png" alt="">by Acadomia</div><div class="pg"><b>02</b> / 09</div>
+  <div class="hd" style="width:560px"><div class="kick">01 · The new flagship website</div><h2>A 35-page site, <em>live</em>.</h2></div>
+  <ul class="dots" style="position:absolute;left:100px;top:270px;width:560px">
+    <li><b>35 live pages:</b> 17 core pages, 7 course pages and 11 journal articles.</li>
+    <li><b>7 courses, 2 collections:</b> Collection 01 Standard (4 levels) and Collection 02 Spoken (3 levels).</li>
+    <li><b>Each level is a journey through France:</b> Paris, Normandy, the Loire, Bordeaux, Marseille, Strasbourg.</li>
+    <li><b>Acadomia credibility on every page:</b> 7 faculty portraits, small groups of 10–12.</li>
+  </ul>
+  <div class="browser" style="left:720px;top:150px;width:1100px">
+    <div class="bar"><i></i><i></i><i></i><span>frenchatelierlive.com</span></div>
+    <video class="vid" data-media data-src="media/site-home.mp4" poster="img/p/site-home.jpg" muted loop playsinline preload="none" style="height:619px;object-fit:cover"></video>
+  </div>
+  <div class="cap" style="left:720px;top:822px;width:1100px"><b>Homepage, screen recording</b>Hero, the two collections, the learning journey, Mapstr, Julien, student stories and the level finder.</div>
+  <div class="browser" style="left:100px;top:640px;width:560px">
+    <div class="bar"><i></i><i></i><i></i><span>frenchatelierlive.com / culture</span></div>
+    <video class="vid" data-media data-src="media/site-inside.mp4" poster="img/p/site-inside.jpg" muted loop playsinline preload="none" style="height:315px;object-fit:cover"></video>
+  </div>
+  <div class="src">Inside pages in the small frame: Cultural Capsules, Julien AI tutor, French culture. Live at <a href="https://www.frenchatelierlive.com">frenchatelierlive.com</a>; page count from a live audit on 7 Oct 2026.</div>
+</section>
+
+<!-- ============ 2 · SIGNATURE ============ -->
+<section class="slide" data-title="Signature experiences">
+  <div class="brand"><img src="img/logo-white.png" alt="">by Acadomia</div><div class="pg"><b>03</b> / 09</div>
+  <div class="hd"><div class="kick">02 · Signature experiences on the site</div><h2>The details that make it <em>premium</em>.</h2></div>
+  <div class="browser" style="left:100px;top:260px;width:900px">
+    <div class="bar"><i></i><i></i><i></i><span>frenchatelierlive.com / map</span></div>
+    <div style="position:relative;width:900px;height:600px;overflow:hidden" data-media data-pptx="media/mapstr-clip.mp4" data-poster="img/p/mapstr-clip.jpg">
+      <iframe data-src="https://www.frenchatelierlive.com/map.html" title="Mapstr" loading="lazy" style="width:1440px;height:960px;transform:scale(.625);transform-origin:0 0;position:absolute;left:0;top:0"></iframe>
+      <img class="exp-only" src="img/p/mapstr-clip.jpg" alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    </div>
+  </div>
+  <div class="cap" style="left:100px;top:916px;width:900px"><b>Mapstr: the course map, live and interactive</b>72 places across the 7 course journeys. Click any pin: this panel is the real page.</div>
+  <div class="vhost" style="position:absolute;left:1040px;top:260px;width:400px;height:500px;border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(200,169,107,.35)">
+    <video class="vid" data-media data-src="media/julien.mp4" poster="img/p/julien.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block"></video>
+    <div class="snd">Tap for sound</div>
+  </div>
+  <div class="cap" style="left:1040px;top:780px;width:400px"><b>Julien, the AI French tutor</b>Available 24/7 between live classes, with his own page on the site.</div>
+  <div style="position:absolute;left:1480px;top:260px;width:340px">
+    <img src="img/f_home_1.jpg" alt="" style="width:340px;height:240px;object-fit:cover;border-radius:12px;display:block;box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px rgba(200,169,107,.3)">
+    <div class="cap" style="position:static;margin:10px 0 22px"><b>Homepage hero</b></div>
+    <img src="img/f_in_2.jpg" alt="" style="width:340px;height:240px;object-fit:cover;border-radius:12px;display:block;box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px rgba(200,169,107,.3)">
+    <div class="cap" style="position:static;margin-top:10px"><b>Cultural Capsules page</b></div>
+  </div>
+  <div class="src">Map: MapLibre, 72 unique places across the 7 journeys (site code). Julien video: the tutor animation used on the live site.</div>
+</section>
+
+<!-- ============ 3 · CAPSULES ============ -->
+<section class="slide" data-title="Cultural Capsules">
+  <div class="brand"><img src="img/logo-white.png" alt="">by Acadomia</div><div class="pg"><b>04</b> / 09</div>
+  <div class="hd" style="width:900px"><div class="kick">03 · New product line</div><h2>Cultural Capsules: <em>language through culture</em>, as a product.</h2></div>
+  <p class="lead" style="position:absolute;left:1060px;top:150px;width:760px;font-size:20px">30 live one-hour conferences on Zoom, each followed by 15–20 minutes of Q&amp;A with a bilingual signature speaker. No French required, sold in packs of ten, independent of the language courses. Method: <em style="color:var(--gold2)">les petites histoires qui font la grande Histoire</em>, every subject tied back to France–US links.</p>
+  <div class="band" style="left:1060px;top:300px">
+    <div><div class="num">3</div><div class="lb">thematic packs</div></div>
+    <div><div class="num">30</div><div class="lb">live conferences</div></div>
+    <div><div class="num">1h</div><div class="lb">+ 15–20 min Q&amp;A</div></div>
+    <div><div class="num">0</div><div class="lb">French required</div></div>
+  </div>
+  <p style="position:absolute;left:100px;top:300px;width:900px;font-size:19px;line-height:1.5;color:#CFC9BC"><b style="color:var(--sky);letter-spacing:.14em;font-size:14px;text-transform:uppercase">Why it matters</b><br>A second product line that opens French Atelier to culture lovers who are not learning French, adds lifetime value for current students, and turns the brand promise, French through culture, into something people can buy.</p>
+  <div class="pk" style="left:100px">
+    <div class="vframe"><video class="vid" data-media data-src="media/capdeck-fashion.mp4" poster="img/p/capdeck-fashion.jpg" muted loop playsinline preload="none"></video></div>
+    <h3><small>Pack 1</small>Fashion &amp; Art</h3><div class="sub">French aesthetics</div>
+    <ol class="mp"><li>Louis XIV</li><li>Claude Monet</li><li>Auguste Rodin</li><li>Henri Matisse</li><li>Coco Chanel</li><li>Christian Dior</li><li>Yves Saint Laurent</li><li>Hubert de Givenchy</li><li>Jean-Paul Gaultier</li><li>JR</li></ol>
+  </div>
+  <div class="pk" style="left:682px">
+    <div class="vframe"><video class="vid" data-media data-src="media/capdeck-gastro.mp4" poster="img/p/capdeck-gastro.jpg" muted loop playsinline preload="none"></video></div>
+    <h3><small>Pack 2</small>Gastronomy &amp; Wine</h3><div class="sub">Terroir on the plate</div>
+    <ol class="mp"><li>The Baguette</li><li>Salted Butter</li><li>Camembert</li><li>Champagne</li><li>The Macaron</li><li>Snails &amp; Frogs</li><li>Foie Gras</li><li>Chocolate</li><li>The Black Truffle</li><li>Ratatouille</li></ol>
+  </div>
+  <div class="pk" style="left:1264px">
+    <div class="vframe"><video class="vid" data-media data-src="media/capdeck-cinema.mp4" poster="img/p/capdeck-cinema.jpg" muted loop playsinline preload="none"></video></div>
+    <h3><small>Pack 3</small>Cinema &amp; Music</h3><div class="sub">Screens and songs</div>
+    <ol class="mp"><li>Georges Méliès</li><li>Édith Piaf</li><li>Yves Montand</li><li>Charles Aznavour</li><li>Bardot &amp; the Nouvelle Vague</li><li>Serge Gainsbourg</li><li>Delon, Melville &amp; the polar</li><li>Hallyday &amp; Hardy</li><li>Amélie &amp; Yann Tiersen</li><li>Hollywood has a French accent</li></ol>
+  </div>
+  <div class="src">Source: Cultural Capsules syllabus (3 × 10). Autoplay previews summarise each pack from the syllabus; the full capsule decks are in production.</div>
+</section>
+
+<!-- ============ 4 · ECOMMERCE ============ -->
+<section class="slide" data-title="Self-service checkout">
+  <div class="brand"><img src="img/logo-white.png" alt="">by Acadomia</div><div class="pg"><b>05</b> / 09</div>
+  <div class="hd" style="width:720px"><div class="kick">04 · E-commerce test</div><h2>Self-service checkout, <em>ready to A/B test</em>.</h2></div>
+  <p class="lead" style="position:absolute;left:100px;top:330px;width:720px;font-size:21px">A 3-step funnel (register, choose, pay) connected to the eTeacher Group payment flow: Airwallex cards, PayPal, Apple Pay and Google Pay. The test: can self-service sales of capsules, bundles and the course reach a workable CPA without sales-call cost?</p>
+  <table class="ptable" style="left:100px;top:520px;width:720px">
+    <tr><th>Test cell</th><th>Price point on staging</th><th>Question</th></tr>
+    <tr><td>1 capsule</td><td><span class="p">$89</span>/mo × 3</td><td>Entry price for culture buyers</td></tr>
+    <tr><td>2 capsules</td><td><span class="p">$158</span>/mo × 3 ($79 each)</td><td>Does a pack discount lift basket size?</td></tr>
+    <tr><td>3 capsules</td><td><span class="p">$207</span>/mo × 3 ($69 each)</td><td>Ceiling for the capsule bundle</td></tr>
+    <tr><td>Membership</td><td><span class="p">$99</span>/mo × 12</td><td>Course + all 30 capsules as one bundle</td></tr>
+    <tr><td>Course alone</td><td><span class="p">$142.80</span> today, then 4 × $285.60</td><td>Self-service course sale, 15% off $1,680</td></tr>
+  </table>
+  <div class="browser" style="left:900px;top:150px;width:920px">
+    <div class="bar"><i></i><i></i><i></i><span>Cultural Capsules · choose your pack</span></div>
+    <img src="img/s_cap_offers.jpg" alt="" style="height:560px;object-fit:cover;object-position:top">
+  </div>
+  <div class="browser" style="left:900px;top:770px;width:440px">
+    <div class="bar"><i></i><i></i><i></i><span>Step 1 · capsule checkout</span></div>
+    <img src="img/s_checkout_step1.jpg" alt="" style="height:180px;object-fit:cover;object-position:top">
+  </div>
+  <div class="browser" style="left:1380px;top:770px;width:440px">
+    <div class="bar"><i></i><i></i><i></i><span>Step 1 · course checkout</span></div>
+    <img src="img/s_course_step1.jpg" alt="" style="height:180px;object-fit:cover;object-position:top">
+  </div>
+  <div class="src">Status: built on staging, sandbox payments only, no live charges. Prices shown are the test price points currently on staging; go-live needs CRM price plans and production payment access. Current course list prices: $336/month or $1,240 in one payment.</div>
+</section>
+
+<!-- ============ 5 · PAID VIDEO ============ -->
+<section class="slide" data-title="Paid video">
+  <div class="brand"><img src="img/logo-white.png" alt="">by Acadomia</div><div class="pg"><b>06</b> / 09</div>
+  <div class="hd"><div class="kick">05 · Paid social video</div><h2>Three video ads, <em>running on Meta</em> today.</h2></div>
+  <div class="browser" style="left:100px;top:300px;width:690px;border-radius:12px">
+    <video class="vid" data-media data-src="media/paid-seehear.mp4" poster="img/p/paid-seehear.jpg" muted loop playsinline preload="none" style="height:388px;object-fit:cover"></video>
+    <div class="snd">Tap for sound</div>
+  </div>
+  <div class="cap" style="left:100px;top:710px;width:690px"><b>See · Hear</b>54 s · 16:9 feed video · in rotation since 25 Aug 2026</div>
+  <div class="browser" style="left:830px;top:300px;width:690px;border-radius:12px">
+    <video class="vid" data-media data-src="media/paid-philippe.mp4" poster="img/p/paid-philippe.jpg" muted loop playsinline preload="none" style="height:388px;object-fit:cover"></video>
+    <div class="snd">Tap for sound</div>
+  </div>
+  <div class="cap" style="left:830px;top:710px;width:690px"><b>Philippe</b>77 s · 16:9 feed video · in rotation since 25 Aug 2026</div>
+  <div class="phone" style="left:1560px;top:250px;width:260px;height:462px">
+    <div class="scr"><video class="vid" data-media data-src="media/paid-charline.mp4" poster="img/p/paid-charline.jpg" muted loop playsinline preload="none"></video><div class="snd">Tap for sound</div></div>
+  </div>
+  <div class="cap" style="left:1560px;top:730px;width:260px"><b>Charline</b>57 s · 9:16 Stories &amp; Reels</div>
+  <div class="band" style="left:100px;top:830px">
+    <div><div class="num">19</div><div class="lb">ads active today</div></div>
+    <div><div class="num">7</div><div class="lb">ad sets live</div></div>
+    <div><div class="num">3</div><div class="lb">hero videos</div></div>
+    <div><div class="num">6</div><div class="lb">weeks in market</div></div>
+  </div>
+  <div class="src">Source: Meta Ads Manager, account French Atelier v2, effective status pulled 7 Oct 2026. Ad sets started 25 Aug and 1 Sep 2026. Videos downloaded from the live ads.</div>
+</section>
+
+<!-- ============ 6 · ORGANIC ============ -->
+<section class="slide" data-title="Organic video library">
+  <div class="brand"><img src="img/logo-white.png" alt="">by Acadomia</div><div class="pg"><b>07</b> / 09</div>
+  <div class="hd" style="width:520px"><div class="kick">06 · Organic social</div><h2>A video library in <em>four formats</em>.</h2></div>
+  <div style="position:absolute;left:100px;top:360px;width:500px">
+    <div class="stat" style="margin-bottom:22px"><div class="num" style="font-size:76px">16,875</div><div class="lb"><b>Instagram</b> @livefrenchatelier · <b>6,700</b> on Facebook (10 Sep 2026)</div></div>
+    <div class="stat" style="margin-bottom:22px"><div class="num" style="font-size:76px">32</div><div class="lb"><b>short-form videos</b> ready to publish</div></div>
+    <ul class="dots">
+      <li><b>Formal vs spoken</b> · 11 lessons: how the French really say it</li>
+      <li><b>Homonyms</b> · 8: one sound, two meanings</li>
+      <li><b>Culture shorts</b> · 7: wine, cheese, wardrobe, history</li>
+      <li><b>Beauty of France</b> · 6: Cannes, Palais Garnier, the national library, curated and branded</li>
+    </ul>
+  </div>
+  <div id="orgGrid"></div>
+  <div class="src">Videos play muted; tap any phone for sound. Beauty of France reels are curated from French museum and venue footage and branded French Atelier. Source: organic library repository; follower baseline 10 Sep 2026.</div>
+</section>
+
+<!-- ============ 7 · CAMPAIGNS ============ -->
+<section class="slide" data-title="Campaign moments">
+  <div class="brand"><img src="img/logo-white.png" alt="">by Acadomia</div><div class="pg"><b>08</b> / 09</div>
+  <div class="hd"><div class="kick">07 · Campaign moments</div><h2>Bastille Day contest and <em>real-time</em> posts.</h2></div>
+  <div class="browser" style="left:100px;top:290px;width:880px">
+    <div class="bar"><i></i><i></i><i></i><span>win-paris-fa.vercel.app</span></div>
+    <img src="img/b_home.jpg" alt="" style="height:550px;object-fit:cover;object-position:top">
+  </div>
+  <div class="cap" style="left:100px;top:900px;width:880px"><b>“Win a free flight to Paris”, Bastille Day 2026</b>Contest microsite with prize, program, entry and terms pages. Entry: follow and share with 10+ friends.</div>
+  <div class="phone" style="left:1030px;top:290px;width:300px;height:533px">
+    <div class="scr"><video class="vid" data-media data-src="media/org-reel-1-win-flight.mp4" poster="img/p/org-reel-1-win-flight.jpg" muted loop playsinline preload="none"></video></div>
+  </div>
+  <div class="cap" style="left:1030px;top:845px;width:300px"><b>Contest reel</b>9:16, part of the contest ad kit</div>
+  <div class="post" style="left:1380px;top:290px;width:440px">
+    <div class="ph"><i></i>livefrenchatelier</div>
+    <img src="img/rtm_fashion_week.jpg" alt="" style="height:550px;object-fit:cover">
+  </div>
+  <div class="cap" style="left:1380px;top:900px;width:440px"><b>Real-time marketing</b>Posts designed for Paris Fashion Week, the grape harvest and the Salon du Chocolat.</div>
+  <div class="src">Contest microsite: <a href="https://win-paris-fa.vercel.app">win-paris-fa.vercel.app</a>. Real-time posts: designed calendar moments in the organic library.</div>
+</section>
+
+<!-- ============ 8 · CRM ============ -->
+<section class="slide" data-title="CRM email and WhatsApp">
+  <div class="brand"><img src="img/logo-white.png" alt="">by Acadomia</div><div class="pg"><b>09</b> / 09</div>
+  <div class="hd"><div class="kick">08 · CRM with the eTeacher email team</div><h2>Full email and WhatsApp funnels, <em>from first click to retention</em>.</h2></div>
+  <div class="band" style="left:100px;top:232px">
+    <div><div class="num">65</div><div class="lb">emails designed</div></div>
+    <div><div class="num">24</div><div class="lb">WhatsApp messages</div></div>
+    <div><div class="num">20+</div><div class="lb">landing pages</div></div>
+    <div><div class="num">3</div><div class="lb">quizzes</div></div>
+    <div><div class="num">5</div><div class="lb">programs</div></div>
+  </div>
+  <div class="fl">
+    <div class="st"><h4>Acquisition nurture</h4><p><b>15</b> emails with desktop and mobile LPs, delivered 29 Apr – 7 May 2026</p></div>
+    <div class="st"><h4>Acquisition drip · stage 3</h4><p><b>12</b> emails, 12 LPs, a quiz and a promo claim page</p></div>
+    <div class="st"><h4>Onboarding</h4><p><b>8</b> emails, 2 LPs, 2 quizzes, 10 WhatsApp messages</p></div>
+    <div class="st"><h4>60-day lifecycle</h4><p><b>30</b> emails: welcome, six pillars, trial, reactivation</p></div>
+    <div class="st"><h4>WhatsApp programs</h4><p><b>14</b> messages: 8 content and promo, 6 retention and acquisition</p></div>
+  </div>
+  <div class="email" style="left:560px;top:390px;width:430px;height:630px">
+    <div class="eb"><b>French Atelier</b> · Meet the French names the world knows</div>
+    <div class="sc"><img src="img/em_acq_01_celebs.jpg" alt="" style="--ey:-520px"></div>
+  </div>
+  <div class="email" style="left:1020px;top:390px;width:430px;height:630px">
+    <div class="eb"><b>French Atelier</b> · Meet the little sparrow of Paris</div>
+    <div class="sc"><img src="img/em_acq_03_piaf.jpg" alt="" style="--ey:-450px"></div>
+  </div>
+  <div class="phone" style="left:1490px;top:390px;width:330px;height:630px">
+    <div class="scr" style="background:#0f1a14"><img src="img/wa_phone.jpg" alt="" style="object-fit:cover;object-position:top"></div>
+  </div>
+  <div class="src" style="bottom:22px">Sources: email handoffs with Sandra Kwiecien (eTeacher CRM), Apr–May 2026, and the program repositories. Totals add the programs; overlap between acquisition nurture and the lifecycle series is not yet reconciled.</div>
+</section>
+
+</div></div>
+
+<div id="ui">
+  <button class="btn" id="prev" aria-label="Previous">‹</button>
+  <div id="dots"></div>
+  <button class="btn" id="next" aria-label="Next">›</button>
+  <button class="btn" id="fs">Full screen</button>
+  <a class="btn gold" id="dl" href="French-Atelier-Initiatives-Oct-2026.pptx" download>Download PowerPoint</a>
+</div>
+
+<script>
+const ORG=[["beauty_3","Beauty of France","Cannes"],["beauty_2","Beauty of France","Palais Garnier"],["beauty_5","Beauty of France","National library"],["formal_vs_spoken_5","Formal vs spoken","Lesson"],["homonyms_1","Homonyms","One sound, two meanings"],
+["homonyms_8","Homonyms","One sound, two meanings"],["french_wines_1","Culture short","French wines"],["french_cheeses","Culture short","French cheeses"],["french_wardrobe","Culture short","French wardrobe"],["french_history","Culture short","French history"]];
+const g=document.getElementById('orgGrid');
+ORG.forEach((o,i)=>{const c=i%5,r=Math.floor(i/5);const x=660+c*236,y=140+r*438;
+ g.insertAdjacentHTML('beforeend',`<div class="phone" style="left:${x}px;top:${y}px;width:212px;height:370px"><div class="scr"><video class="vid" data-media data-src="media/org-${o[0]}.mp4" poster="img/p/org-${o[0]}.jpg" muted loop playsinline preload="none"></video></div></div><div class="cap" style="left:${x+4}px;top:${y+378}px;width:210px;font-size:14px"><b style="font-size:16px">${o[1]}</b>${o[2]}</div>`)});
+const P=new URLSearchParams(location.search);const EXPORT=P.has('export');
+const slides=[...document.querySelectorAll('.slide')];let cur=0;
+const stage=document.getElementById('stage');
+function fit(){const s=EXPORT?1:Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform=`scale(${s})`}
+addEventListener('resize',fit);fit();
+const dots=document.getElementById('dots');slides.forEach((s,i)=>{const d=document.createElement('i');d.title=s.dataset.title;d.onclick=()=>go(i);dots.appendChild(d)});
+function load(i){const s=slides[i];if(!s||EXPORT)return;s.querySelectorAll('video[data-src]').forEach(v=>{if(!v.src){v.src=v.dataset.src;v.preload='auto'}});s.querySelectorAll('iframe[data-src]').forEach(f=>{if(!f.src)f.src=f.dataset.src})}
+function go(i){i=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,k)=>{s.classList.toggle('on',k===i);if(k!==i)s.querySelectorAll('video').forEach(v=>{v.pause();v.muted=true})});cur=i;
+ [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));load(i);load(i+1);
+ slides[i].querySelectorAll('video').forEach(v=>{v.muted=true;const p=v.play();if(p)p.catch(()=>{})});
+ if(!EXPORT)history.replaceState(null,'','#'+(i+1))}
+document.addEventListener('click',e=>{if(e.target.closest('#ui'))return;const host=e.target.closest('.browser,.scr,.vframe,.vhost');const v=host&&host.querySelector('video');
+ if(v){const was=v.muted;document.querySelectorAll('video').forEach(o=>o.muted=true);v.muted=!was;if(!v.muted){v.currentTime=0;v.play().catch(()=>{})}}});
+document.getElementById('prev').onclick=()=>go(cur-1);document.getElementById('next').onclick=()=>go(cur+1);
+document.getElementById('fs').onclick=()=>{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})};
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(cur-1)}if(e.key==='Home')go(0);if(e.key==='End')go(slides.length-1)});
+let tx=null;addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)go(cur+(dx<0?1:-1));tx=null});
+if(EXPORT){document.body.classList.add('export');document.querySelectorAll('.exp-only').forEach(e=>e.style.display='block');document.querySelectorAll('iframe').forEach(f=>f.style.display='none');
+ const n=parseInt(P.get('export'))||0;slides.forEach((s,k)=>{s.style.transition='none';s.classList.toggle('on',k===n)});
+ window.mediaRects=()=>[...slides[n].querySelectorAll('[data-media]')].map(el=>{const r=el.getBoundingClientRect();return{x:r.left,y:r.top,w:r.width,h:r.height,src:el.dataset.pptx||el.dataset.src,poster:el.dataset.poster||el.getAttribute('poster')}});
+}else{const h=parseInt(location.hash.slice(1));go(isNaN(h)?0:h-1)}
+</script>
+</body>
+</html>
